@@ -121,3 +121,23 @@ def join(request, hoodId):
     messages.success(request, ' You have succesfully joined this Neighbourhood!! ')
     return redirect('hoods')
 
+
+@login_required(login_url = '/accounts/login')
+def all_hoods(request):
+
+    if request.user.is_authenticated:
+        if Join.objects.filter(user_id=request.user).exists():
+            hood = Neighbourhood.objects.get(pk=request.user.join.hood_id.id)
+            businesses = Business.objects.filter(hood=request.user.join.hood_id.id)
+            posts = Post.objects.filter(hood=request.user.join.hood_id.id)
+            print(posts)
+            return render(request, "hood.html", locals())
+        else:
+            neighbourhoods = Neighbourhood.objects.all()
+            return render(request, 'hood.html', locals())
+    else:
+        neighbourhoods = Neighbourhood.objects.all()
+
+        return render(request, 'hood.html', locals())
+
+
