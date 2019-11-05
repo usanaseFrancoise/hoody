@@ -21,11 +21,12 @@ as a user he/she will be able:
  examples we have location 
  
 #### Gikondo
-####Niboyi
+#### Niboyi
 #### Nyandungu
         
         
 ## Technology used
+
 - /Virtual
 - Django
 - Postgress
