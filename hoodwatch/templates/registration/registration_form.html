@@ -1,0 +1,133 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+<div class="container" style="font-family: 'Raleway', sans-serif; margin-top:50px;">
+  <div class="row">
+   
+    <div class="col-md-6" style="background-image:url(https://i.gifer.com/CeD.gif); background-repeat: no-repeat; background-size: cover;">
+      <div class="hello" style="font-family: 'Dancing Script', cursive;">
+        <h3>Neigbourhood Watch.</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      {% if form.errors %}
+      <p> Some Information Might be Incorrect check! </p>
+      {% endif %}
+      <div class="panel panel-default" style="border:1px solid rgb(231, 231, 231); border-radius:10px;">
+
+        <div class="panel-heading" style="background-color:rgb(231, 231, 231);  padding:10px;">
+          <h5 class="text-center">Sign Up</h5>
+        </div>
+        <div class="panel-body" style="padding:10px;">
+
+
+
+
+    <form action="/accounts/register/" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+        <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+        </div>
+
+    <input type="hidden" name="next" value="{{next}}">
+
+  </form>{%extends "registration/base.html"%}
+  {% load bootstrap4 %}
+  {% block content %}
+  
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  
+  <div class="container" style="font-family: 'Raleway', sans-serif; margin-top:50px;">
+    <div class="row">
+     
+      <div class="col-md-6" style="background-image:url(https://i.gifer.com/CeD.gif); background-repeat: no-repeat; background-size: cover;">
+        <div class="hello" style="font-family: 'Dancing Script', cursive;">
+          <h3>Neigbourhood Watch.</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        {% if form.errors %}
+        <p> Some Information Might be Incorrect check! </p>
+        {% endif %}
+        <div class="panel panel-default" style="border:1px solid rgb(231, 231, 231); border-radius:10px;">
+  
+          <div class="panel-heading" style="background-color:rgb(231, 231, 231);  padding:10px;">
+            <h5 class="text-center">Sign Up</h5>
+          </div>
+          <div class="panel-body" style="padding:10px;">
+  
+  
+  
+  
+      <form action="/accounts/register/" method="post">
+      {% csrf_token %}
+  <a href="/accounts/login">LOGIN</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-2"></div>
+</div>
+</div>
+<div class="container-fluid" style="height:30px;">
+<img src="/static/images/streets-graphic-br2n.png" alt="" width="100%;">
+</div>
+<style>
+.help-block ul,
+li {
+display: none;
+visibility: hidden;
+margin-top: 0px;
+}
+.form-group btn {
+display: flex;
+margin: 10px;
+padding: 10px;
+}
+.form-text {
+visibility: hidden;
+display: none;
+margin-top: 0px;
+}
+*,
+*:after,
+*:before {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+.hello {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+top: 25%;
+}
+.hello h3 {
+position: relative;
+color: #221086;
+text-align: center;
+white-space: nowrap;
+font-size: 60px;
+letter-spacing: 0.0625em;
+width: calc(20ch + 20*0.0625em);
+}
+.hello h3:after {
+display: block;
+position: absolute;
+content: '';
+width: calc(20ch + 20*0.0625em);
+height: 2ex;
+left: 0;
+top: 0;
+background: #eff5ed;
+animation: 0.6s blink 20, move 3s 1.5s forwards steps(1);
+border-left: 1px solid #dddee2;
+box-shadow: 0px 1ex 0px 0px #eff5ed;
+}
