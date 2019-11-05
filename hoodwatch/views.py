@@ -42,7 +42,6 @@ def updateprofile(request):
 	return render(request, 'updateprofile.html',{"form":form })
 
 
-
 @login_required(login_url='/accounts/login/')
 def createHood(request):
     if request.method == 'POST':
