@@ -40,3 +40,33 @@ def updateprofile(request):
 	else:
 			form = ProfileForm()
 	return render(request, 'updateprofile.html',{"form":form })
+
+
+
+@login_required(login_url='/accounts/login/')
+def createHood(request):
+    if request.method == 'POST':
+        form = CreateHoodForm(request.POST)
+        if form.is_valid():
+            hood = form.save(commit = False)
+            hood.user = request.user
+            hood.save()
+       
+        return redirect('index')
+    else:
+        form = CreateHoodForm()
+        return render(request,'new_hood.html',{"form":form})
+
+
+def search(request):
+
+    if request.GET['hoods']:
+        search_term = request.GET.get("hoods")
+        hoods = Neighbourhood.search_hood(search_term)
+        message = f"{search_term}"
+
+        return render(request,'search.html',locals())
+
+    else:
+        message = "You Haven't searched for any item"
+        return render(request,'search.html',locals())
