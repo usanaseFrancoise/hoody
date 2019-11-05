@@ -106,3 +106,18 @@ def create_business(request):
     else:
         form = BusinessForm()
     return render(request,"businessform.html",locals())
+
+
+@login_required(login_url='/accounts/login/')
+def join(request, hoodId):
+    neighbourhood = Neighbourhood.objects.get(pk=hoodId)
+    if Join.objects.filter(user_id=request.user).exists():
+
+        Join.objects.filter(user_id=request.user).update(hood_id=neighbourhood)
+    else:
+
+        Join(user_id=request.user, hood_id=neighbourhood).save()
+
+    messages.success(request, ' You have succesfully joined this Neighbourhood!! ')
+    return redirect('hoods')
+
