@@ -32,6 +32,6 @@ as a user he/she will be able:
 - Postgress
 
 - running server http://127.0.0.1:8000/
-- Heroku Reach your neighbour  https://gallerapp.herokuapp.com/
+- Heroku Reach your neighbour  https://hoodyfanny.herokuapp.com/
 
 ### License copyright (c) 2019 usanaseFrancoise
