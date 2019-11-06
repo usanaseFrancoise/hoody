@@ -52,7 +52,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c%nn5yzkc#-fixyu6i3j17+5u=k_@!lpuqp__5cz%arb=^!=0p'
+# SECRET_KEY = 'c%nn5yzkc#-fixyu6i3j17+5u=k_@!lpuqp__5cz%arb=^!=0p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,6 +89,7 @@ ROOT_URLCONF = 'hood.urls'
 
 TEMPLATES = [
     {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
@@ -109,6 +110,7 @@ WSGI_APPLICATION = 'hood.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
 
 
 
